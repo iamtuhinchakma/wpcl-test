@@ -5,6 +5,18 @@ import java.util.*;
 
 public class EmployeeManager {
     public static void main(String[] args) {
+        if (args.length != 1) {
+            System.out.println("Usage: java EmployeeManager <option>");
+            System.out.println("Options:");
+            System.out.println("  l - List all employees");
+            System.out.println("  s - Show a random employee");
+            System.out.println("  +<name> - Add a new employee");
+            System.out.println("  ?<name> - Search for an employee");
+            System.out.println("  c - Count the number of words in the file");
+            System.out.println("  u<name> - Update an employee's name to 'Updated'");
+            System.out.println("  d<name> - Delete an employee");
+            return;
+        }
         // Check arguments
         if (args[0].equals("l")) {
             System.out.println("Loading data ...");
