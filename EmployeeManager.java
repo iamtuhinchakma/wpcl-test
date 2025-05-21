@@ -3,17 +3,21 @@ import java.util.*;
 
 public class EmployeeManager {
 
+    //Read from the file
     public static String readFromFile() throws IOException{
         try(BufferedReader reader = new BufferedReader(new FileReader (Constants.FILE_PATH));){
             return reader.readLine();
         }
     }
+
+    //write data to the file
     public static void writeToFile(String data) throws IOException{
         try(BufferedWriter writer = new BufferedWriter(new FileWriter(Constants.FILE_PATH, true));){
             writer.write(data);
         }
     }
     public static void main(String[] args) {
+        //if no argument
         if(args.length != 1){
             System.out.println("No argument given");
             return;
@@ -40,6 +44,7 @@ public class EmployeeManager {
             }
             System.out.println("Data Loaded.");
         } else if (args[0].contains("+")) {
+            //Add a new employee
             System.out.println("Loading data ...");
             try {
                 String newEmployee = args[0].substring(1);
@@ -48,6 +53,7 @@ public class EmployeeManager {
             }
             System.out.println("Data Loaded.");
         } else if (args[0].contains("?")) {
+            //Search for an employee in file
             System.out.println("Loading data ...");
             try {
                 String employees[] = readFromFile().split(",");
@@ -60,7 +66,7 @@ public class EmployeeManager {
             } catch (Exception e) {
             }
             System.out.println("Data Loaded.");
-        } else if (args[0].contains("c")) {
+        } else if (args[0].contains("c")) { // count the number of word in file
             System.out.println("Loading data ...");
             try {
                 String line = readFromFile();
@@ -70,7 +76,7 @@ public class EmployeeManager {
             } catch (Exception e) {
             }
             System.out.println("Data Loaded.");
-        } else if (args[0].contains("u")) {
+        } else if (args[0].contains("u")) { //Update employee
             System.out.println("Loading data ...");
             try {
                 String employees[] = readFromFile().split(",");
@@ -84,7 +90,7 @@ public class EmployeeManager {
             } catch (Exception e) {
             }
             System.out.println("Data Updated.");
-        } else if (args[0].contains("d")) {
+        } else if (args[0].contains("d")) { //Delete employee
             System.out.println("Loading data ...");
             try {
                 String employees[] = readFromFile().split(",");
