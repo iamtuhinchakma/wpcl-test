@@ -4,13 +4,13 @@ import java.util.*;
 public class EmployeeManager {
 
     public static String readFromFile() throws IOException{
-        BufferedReader reader = new BufferedReader(new FileReader ("employees.txt"));
+        BufferedReader reader = new BufferedReader(new FileReader (Constants.FILE_PATH));
         String line = reader.readLine();
         reader.close();
         return line;
     }
     public static void writeToFile(String data) throws IOException{
-        BufferedWriter writer = new BufferedWriter(new FileWriter("employees.txt", true));
+        BufferedWriter writer = new BufferedWriter(new FileWriter(Constants.FILE_PATH, true));
         writer.write(data);
         writer.close();
     }
