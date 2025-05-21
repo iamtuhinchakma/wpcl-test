@@ -95,6 +95,8 @@ public class EmployeeManager {
             } catch (Exception e) {
             }
             System.out.println("Data Deleted.");
+        }  else {
+            System.out.println("Invalid argument: " + "Input valid argument like l, s, +, ?, c, u");
         }
     }
 }
